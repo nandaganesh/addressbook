@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        string(name:'Nanda',defaultValue:'---',description:'---')
+        string(name:'Env',defaultValue:'compilation',description:'no descri.  at')
     }
         stages{
             stage('COMPILE'){
