@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    parameters{
+        string(name:'Nanda',defaultValue:'---',description:'---')
+    }
         stages{
             stage('COMPILE'){
                 steps{
