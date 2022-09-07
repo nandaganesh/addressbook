@@ -1,11 +1,25 @@
 pipeline{
-    agent any{
+    agent any
         stages{
             stage('COMPILE'){
                 steps{
-                    echo "it is a compilation process"
+                    script{
+                        echo "it is a compilation process"
+                        }
                 }
-
+            }
+            stage('UNIT TEST'){
+                steps{
+                    script{
+                    echo "this is the test cases processes"
+                    }
+                }
+            }
+            stage('PACKAGE'){
+                steps{
+                    script{
+                    echo "this is the package processes"
+                    }
             }
         }
     }
