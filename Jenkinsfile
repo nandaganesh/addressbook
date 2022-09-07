@@ -2,6 +2,7 @@ pipeline{
     agent any
     parameters{
         string(name:'Env',description:'no descri.  at',defaultValue:'compilation')
+        booleanParam(name:'Test',description:'no descri.  at',defaultValue:'deploy')
     }
         stages{
             stage('COMPILE'){
