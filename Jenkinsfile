@@ -2,7 +2,7 @@ pipeline{
     agent any
     parameters{
         string(name:'Env',description:'environment',defaultValue:'compilation')
-        booleanParam(name:'execute Tests',description:'true',defaultValue:'ready to run TC')
+        booleanParam(name:'executeTests',description:'true',defaultValue:'ready to run TC')
     }
         stages{
             stage('COMPILE'){
@@ -13,6 +13,11 @@ pipeline{
                 }
             }
             stage('UNIT TEST'){
+                when{
+                    expression{
+                        params.executeTests == true
+                    }
+                }
                 steps{
                     script{
                     echo "this is the test cases processes"
