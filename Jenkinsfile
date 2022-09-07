@@ -1,26 +1,23 @@
 pipeline{
     agent any
-    parameters{
-        string(name:'Env',description:'environment',defaultValue:'compilation')
-        booleanParam(name:'executeTests',description:'true',defaultValue:'ready to run TC')
+    tools{
+        jdk 'myjava'
+        maven 'mymaven'
     }
         stages{
             stage('COMPILE'){
                 steps{
                     script{
                         echo "it is a compilation process"
+                        sh 'mvn compile'
                         }
                 }
             }
             stage('UNIT TEST'){
-                when{
-                    expression{
-                        params.executeTests == true
-                    }
-                }
                 steps{
                     script{
                     echo "this is the test cases processes"
+                    sh 'mvn test'
                     }
                 }
             }
@@ -28,6 +25,7 @@ pipeline{
                 steps{
                     script{
                     echo "this is the package processes"
+                    sh 'mvn package'
                     }
             }
         }
