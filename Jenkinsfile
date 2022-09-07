@@ -1,8 +1,8 @@
 pipeline{
     agent any
     parameters{
-        string(name:'Env',description:'no descri.  at',defaultValue:'compilation')
-        booleanParam(name:'Test',description:'no descri.  at',defaultValue:'deploy')
+        string(name:'Env',description:'environment',defaultValue:'compilation')
+        booleanParam(name:'execute Tests',description:'true',defaultValue:'ready to run TC')
     }
         stages{
             stage('COMPILE'){
