@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        string(name:'Env',defaultValue:'compilation',description:'no descri.  at')
+        string(name:'Env',description:'no descri.  at',defaultValue:'compilation')
     }
         stages{
             stage('COMPILE'){
