@@ -1,4 +1,4 @@
-#!/bin/bash
+
 if [ -d "addressbook" ]
 then
  echo "repo is cloned and exists"
