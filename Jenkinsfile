@@ -6,6 +6,7 @@ pipeline {
             steps {
                 script {
                     echo "compile the code"
+                    sh "mvn compile"
                 }
             }
         }
@@ -14,6 +15,7 @@ pipeline {
             steps {
                 script {
                     echo "compile the code"
+                    sh "mvn test"
                 }
             }
         }
